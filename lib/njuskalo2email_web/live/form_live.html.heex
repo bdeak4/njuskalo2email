@@ -1,0 +1,9 @@
+<input
+  type="text"
+  name="query"
+  placeholder="Search njuskalo.hr ads"
+  value={@query}
+  phx-keyup="update_autocomplete"
+  phx-debounce="250">
+
+<%= @query %>
