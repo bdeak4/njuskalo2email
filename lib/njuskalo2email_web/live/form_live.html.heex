@@ -1,9 +1,28 @@
-<input
-  type="text"
-  name="query"
-  placeholder="Search njuskalo.hr ads"
-  value={@query}
-  phx-keyup="update_autocomplete"
-  phx-debounce="250">
+<div class="my-2">
+  <label class="mr-3">
+    <input type="radio" name="tab" value="ads" checked={@tab == "ads"} phx-click="set_tab">
+    Oglasi
+  </label>
+  <label class="mr-3">
+    <input type="radio" name="tab" value="cars" checked={@tab == "cars"} phx-click="set_tab">
+    Automobili
+  </label>
+</div>
 
-<%= @query %>
+<div>
+<%= if @tab == "ads" do %>
+  <input
+    type="text"
+    name="query"
+    placeholder="Search njuskalo.hr ads"
+    value={@ad_query}
+    phx-keyup="set_ad_query"
+    phx-debounce="250">
+
+  <%= @ad_query %>
+<% end %>
+
+<%= if @tab == "cars" do %>
+  car tab
+<% end %>
+</div>
