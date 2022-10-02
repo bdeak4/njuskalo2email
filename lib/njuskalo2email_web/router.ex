@@ -17,7 +17,7 @@ defmodule Njuskalo2emailWeb.Router do
   scope "/", Njuskalo2emailWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    live "/", FormLive
   end
 
   # Other scopes may use custom stacks.
